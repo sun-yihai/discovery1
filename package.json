@@ -1,0 +1,46 @@
+{
+  "_from": "@microsoft/azure-data-factory-utilities@^0.1.5",
+  "_id": "@microsoft/azure-data-factory-utilities@0.1.5",
+  "_inBundle": false,
+  "_integrity": "sha512-+Hmv6RDnNmm6J7xhn0a+pzTOCtXrW96F/QK6bMyKWd2xXRT2JLBvLoqd/hMjz8f2Lp6WbOhX6gFvTFLXh8dD9Q==",
+  "_location": "/@microsoft/azure-data-factory-utilities",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@microsoft/azure-data-factory-utilities@^0.1.5",
+    "name": "@microsoft/azure-data-factory-utilities",
+    "escapedName": "@microsoft%2fazure-data-factory-utilities",
+    "scope": "@microsoft",
+    "rawSpec": "^0.1.5",
+    "saveSpec": null,
+    "fetchSpec": "^0.1.5"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@microsoft/azure-data-factory-utilities/-/azure-data-factory-utilities-0.1.5.tgz",
+  "_shasum": "d78b01f214ca4e2f44f4f8a16a05c21110ebed61",
+  "_spec": "@microsoft/azure-data-factory-utilities@^0.1.5",
+  "_where": "C:\\npm",
+  "bundleDependencies": false,
+  "dependencies": {
+    "commander": "6.2.0"
+  },
+  "deprecated": false,
+  "description": "Azure Data Factory utilities library",
+  "devDependencies": {
+    "@types/node": "~8.9.4",
+    "ts-node": "~7.0.0",
+    "tsutils": "~1.6.0",
+    "typescript": "3.2.4"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "name": "@microsoft/azure-data-factory-utilities",
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc",
+    "start": "node ./lib/index.js"
+  },
+  "version": "0.1.5"
+}
