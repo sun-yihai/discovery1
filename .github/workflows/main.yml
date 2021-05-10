@@ -47,6 +47,7 @@ jobs:
         
       - name: ADF resources build and validate
         run: |
-          npm run build
+          npm run start export C:\ARM_Export /subscriptions/11f3763d-3f4f-4f17-a8ec-6110d27fab88/resourceGroups/CICDv1
+          npm run start validate C:\ARM_Export /subscriptions/11f3763d-3f4f-4f17-a8ec-6110d27fab88/resourceGroups/CICDv1
         env:
           CI: true
