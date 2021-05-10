@@ -48,6 +48,5 @@ jobs:
       - name: ADF resources build and validate
         run: |
           npm run build
-          npm run test
         env:
           CI: true
