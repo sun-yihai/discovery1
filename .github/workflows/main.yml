@@ -43,7 +43,7 @@ jobs:
          node-version: ${{ matrix.node-version }}
          
       - name: npm install
-        run: npm ci
+        run: yarn install --frozen-lockfile
         
       - name: ADF resources build and validate
         run: |
