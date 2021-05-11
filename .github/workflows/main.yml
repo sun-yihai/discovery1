@@ -34,8 +34,8 @@ jobs:
         
       - name: Build and validate 
         run: |
-          npm run build ARM_Export /subscriptions/11f3763d-3f4f-4f17-a8ec-6110d27fab88/resourceGroups/cicdv1/providers/Microsoft.DataFactory/factories/adf-ve-dev
-      
+          npm run start export ARM_Export /subscriptions/11f3763d-3f4f-4f17-a8ec-6110d27fab88/resourceGroups/cicdv1/providers/Microsoft.DataFactory/factories/adf-ve-dev
+          npm run start validate ARM_Export /subscriptions/11f3763d-3f4f-4f17-a8ec-6110d27fab88/resourceGroups/cicdv1/providers/Microsoft.DataFactory/factories/adf-ve-dev
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
