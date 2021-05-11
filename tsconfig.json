@@ -19,7 +19,7 @@
       "es2016"
     ]
   },
-  "include": ["src"],
+  "include": ["**/*"],
   "exclude": [
     "src/test.ts",
     "**/*.spec.ts"
