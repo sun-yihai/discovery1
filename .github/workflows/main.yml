@@ -47,7 +47,8 @@ jobs:
         
       - name: ADF resources build and validate
         run: |
-          npm run build
-  
-        env:
-          CI: true
+          npm run start export C:\ARM_Export /subscriptions/11f3763d-3f4f-4f17-a8ec-6110d27fab88/resourceGroups/cicdv1/providers/Microsoft.DataFactory/factories/adf-ve-dev
+          npm run start validate C:\ARM_Export /subscriptions/11f3763d-3f4f-4f17-a8ec-6110d27fab88/resourceGroups/cicdv1/providers/Microsoft.DataFactory/factories/adf-ve-dev
+        
+      #  env:
+      #   CI: true
