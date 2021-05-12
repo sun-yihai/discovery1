@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI-CD
+name: CIv1
 
 # Controls when the action will run. 
 on:
@@ -37,17 +37,18 @@ jobs:
           npm run build validate . /subscriptions/11f3763d-3f4f-4f17-a8ec-6110d27fab88/resourceGroups/cicdv1/providers/Microsoft.DataFactory/factories/adf-ve-dev
           npm run build export . /subscriptions/11f3763d-3f4f-4f17-a8ec-6110d27fab88/resourceGroups/cicdv1/providers/Microsoft.DataFactory/factories/adf-ve-dev
           
-        
-      # Build Artifact from ARM template
-      - name: Build Artifact
-        uses: actions/upload-artifact@v2.2.3
+     # Publish Artifact: Publish: ARM-Templates    
+      - name: 'Publish Artifact: ARM-Templates' 
+        uses: actions/upload-artifact@v2
         with:
-         name: ADFArtifact
-         path: ${{ github.workspace }}
-      
+         name: 'ARM-Templates'
+         path: '${{ github.workspace }}/ARM-Templates'
+          
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
          echo Add other actions to build,
          echo test, and deploy your project.
          ls -ltr
+        
+          

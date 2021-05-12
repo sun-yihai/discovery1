@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI-CD
+name: buildonly
 
 # Controls when the action will run. 
 on:
@@ -29,13 +29,13 @@ jobs:
         with:
          node-version: '14'
          
-      - name: Run npm install
-        run: npm install
+   #   - name: Run npm install
+    #    run: npm install
         
-      - name: Build and validate 
-        run: |
-          npm run build validate . /subscriptions/11f3763d-3f4f-4f17-a8ec-6110d27fab88/resourceGroups/cicdv1/providers/Microsoft.DataFactory/factories/adf-ve-dev
-          npm run build export . /subscriptions/11f3763d-3f4f-4f17-a8ec-6110d27fab88/resourceGroups/cicdv1/providers/Microsoft.DataFactory/factories/adf-ve-dev
+    #  - name: Build and validate 
+     #   run: |
+      #    npm run build validate . /subscriptions/11f3763d-3f4f-4f17-a8ec-6110d27fab88/resourceGroups/cicdv1/providers/Microsoft.DataFactory/factories/adf-ve-dev
+       #   npm run build export . /subscriptions/11f3763d-3f4f-4f17-a8ec-6110d27fab88/resourceGroups/cicdv1/providers/Microsoft.DataFactory/factories/adf-ve-dev
           
         
       # Build Artifact from ARM template
