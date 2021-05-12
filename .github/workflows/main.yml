@@ -44,5 +44,26 @@ jobs:
          echo test, and deploy your project.
          ls -ltr
          
-      #   
+      # Azure login
+      - name: Azure login
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+         
+      # Override the ADF parameters
+      - name: Update ARMTemplateForFactory.json
+        uses: jossef/action-set-json-field@v1
+        with:
+         file: ARMTemplateForFactory.json
+         field: defaultValue
+         value: ADF-VE-UAT
+         
+         
+      # Download the Artifact
+      - name: download Artifact
+        uses: actions/download-artifact@v2
+        with:
+         name: ADFArtifact
+         path: ${{ github.workspace }}
+         
        
