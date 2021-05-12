@@ -44,11 +44,5 @@ jobs:
          echo test, and deploy your project.
          ls -ltr
          
-      - name: deploy test  
-      - uses: azure/arm-deploy@v1
-        with:
-          resourceGroupName: CICDv1
-          template: ${{ github.workspace }}/ARMTemplateForFactory.json
-          deploymentName: ADF-Test
-         
+
        
