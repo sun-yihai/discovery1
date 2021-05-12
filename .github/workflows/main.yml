@@ -50,14 +50,6 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
          
-      # Override the ADF parameters
-      - name: Update ARMTemplateForFactory.json
-        uses: jossef/action-set-json-field@v1
-        with:
-         file: ARMTemplateForFactory.json
-         field: defaultValue
-         value: ADF-VE-UAT
-         
          
       # Download the Artifact
       - name: download Artifact
