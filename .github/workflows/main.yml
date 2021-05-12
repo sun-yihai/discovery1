@@ -44,12 +44,11 @@ jobs:
          echo test, and deploy your project.
          ls -ltr
          
-         
-      # Download the Artifact
-      - name: download Artifact
-        uses: actions/download-artifact@v2
+      - name: deploy test  
+      - uses: azure/arm-deploy@v1
         with:
-         name: ADFArtifact
-         path: ${{ github.workspace }}
+          resourceGroupName: CICDv1
+          template: ${{ github.workspace }}/ARMTemplateForFactory.json
+          deploymentName: ADF-Test
          
        
