@@ -35,7 +35,7 @@ jobs:
         uses: actions/upload-artifact@v2.2.3
         with:
          name: ADFArtifact
-         path: ${{ github.workspace }}/adf-resources
+         path: ${{ github.workspace }}
       
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
