@@ -56,3 +56,13 @@ jobs:
       - uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+
+      # Deploy ARM template
+      - name: Run ARM deploy
+        uses: azure/arm-deploy@v1
+        with:
+          subscriptionId: 11f3763d-3f4f-4f17-a8ec-6110d27fab88
+          resourceGroupName: CICDv1
+          template: ${{ github.workspace }}/ARMTemplateForFactory.json
+          parameters: factoryName=ADF-VE-UAT
