@@ -14,6 +14,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:
+         path: feature7
 
       # Runs a single command using the runners shell
       - name: Run NPM
@@ -58,6 +60,8 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
      
       - uses: actions/checkout@v2
+        with:
+         path: feature7
       
       # Deploy ARM template
       - name: Azure CLI script
