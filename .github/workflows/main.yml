@@ -40,7 +40,7 @@ jobs:
          
      # Build Artifact from ARM template
       - name: Download Artifact
-        uses: actions/download-artifact@v2.2.3
+        uses: actions/download-artifact@v2
         with:
          name: ADFArtifact
          path: ${{ github.workspace }}
