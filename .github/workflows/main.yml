@@ -36,6 +36,14 @@ jobs:
         with:
          name: ADFArtifact
          path: ${{ github.workspace }}
+         
+         
+     # Build Artifact from ARM template
+      - name: Download Artifact
+        uses: actions/download-artifact@v2.2.3
+        with:
+         name: ADFArtifact
+         path: ${{ github.workspace }}
       
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
