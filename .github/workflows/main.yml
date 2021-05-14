@@ -63,7 +63,4 @@ jobs:
         with:
           azcliversion: 2.0.72
           inlineScript: |
-             --name ADF-VE-UAT \
-             --resource-group CICDv1 \
-             --template-file ${{ github.workspace }}/ArtifactDownload/ARMTemplateForFactory.json \
-             --parameters factoryName=ADF-VE-UAT
+            az datafactory factory create --name "ADF-VE-UAT" --resource-group "CICDv1" --properties @${{ github.workspace }}/ARMTemplateForFactory.json
