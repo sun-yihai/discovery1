@@ -58,10 +58,12 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       # Deploy ARM template
-      - name: Run ARM deploy
-        uses: azure/arm-deploy@v1
+      - name: Azure CLI script
+        uses: azure/CLI@v1
         with:
-          subscriptionId: 11f3763d-3f4f-4f17-a8ec-6110d27fab88
-          resourceGroupName: CICDv1
-          template: ${{ github.workspace }}/ArtifactDownload/ARMTemplateForFactory.json
-          parameters: factoryName=ADF-VE-UAT
+          azcliversion: 2.0.72
+          inlineScript: |
+             --name ADF-VE-UAT \
+             --resource-group CICDv1 \
+             --template-file ${{ github.workspace }}/ArtifactDownload/ARMTemplateForFactory.json \
+             --parameters factoryName=ADF-VE-UAT
