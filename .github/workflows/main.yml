@@ -28,7 +28,7 @@ jobs:
       - name: Build and validate 
         run: |
           npm run build validate ${{ github.workspace }}/adf-resources /subscriptions/11f3763d-3f4f-4f17-a8ec-6110d27fab88/resourceGroups/cicdv1/providers/Microsoft.DataFactory/factories/adf-ve-dev
-          npm run build export ${{ github.workspace }}/adf-resources /subscriptions/11f3763d-3f4f-4f17-a8ec-6110d27fab88/resourceGroups/cicdv1/providers/Microsoft.DataFactory/factories/adf-ve-dev
+          npm run build export ${{ github.workspace }}/adf-resources /subscriptions/11f3763d-3f4f-4f17-a8ec-6110d27fab88/resourceGroups/cicdv1/providers/Microsoft.DataFactory/factories/adf-ve-dev ARMExport
           
         
       # Build Artifact from ARM template
@@ -40,11 +40,11 @@ jobs:
          
          
      # Build Artifact from ARM template
-     # - name: Download Artifact
-      #  uses: actions/download-artifact@v2.0.9
-       # with:
-        # name: ADFArtifact
-         #path: ${{ github.workspace }}/ArtifactDownload
+      - name: Download Artifact
+        uses: actions/download-artifact@v2.0.9
+        with:
+         name: ADFArtifact
+         path: ${{ github.workspace }}/ArtifactDownload
       
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
@@ -59,12 +59,10 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
      
       - uses: actions/checkout@v2
-        with:
-         path: feature7
       
       # Deploy ARM template
       - name: Azure CLI script
         uses: azure/CLI@v1
         with:
           inlineScript: |
-            az deployment group create --resource-group CICDv1 --template-file ${{ github.workspace }}/ArtifactDownload/ARMTemplateForFactory.json --parameters factoryName=ADF-VE-UAT1
+            az deployment group create --resource-group CICDv1 --template-file ${{ github.workspace }}/ARMExport/ARMTemplateForFactory.json --parameters factoryName=ADF-VE-UAT1
