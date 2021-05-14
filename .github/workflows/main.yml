@@ -31,11 +31,11 @@ jobs:
           
         
       # Build Artifact from ARM template
-     # - name: Build Artifact
-      #  uses: actions/upload-artifact@v2.2.3
-       # with:
-        # name: ADFArtifact
-         #path: ${{ github.workspace }}
+      - name: Build Artifact
+        uses: actions/upload-artifact@v2.2.3
+        with:
+         name: ADFArtifact
+         path: ${{ github.workspace }}/ArtifactDownload
          
          
      # Build Artifact from ARM template
@@ -64,4 +64,4 @@ jobs:
         uses: azure/CLI@v1
         with:
           inlineScript: |
-            az deployment group create --resource-group CICDv1 --template-file /home/runner/work/discovery1/discovery1/ARMTemplateForFactory.json --parameters factoryName=ADF-VE-UAT1
+            az deployment group create --resource-group CICDv1 --template-file ${{ github.workspace }}/ArtifactDownload/ARMTemplateForFactory.json --parameters factoryName=ADF-VE-UAT1
