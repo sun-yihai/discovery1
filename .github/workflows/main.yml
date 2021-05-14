@@ -63,7 +63,4 @@ jobs:
         with:
           inlineScript: |
             az deployment group create \
-            --name ADF deploymentADF \
-            --resource group CICDv1 \
-            --template-file ${{ github.workspace }}\ARMTemplateForFactory.json \
-            --parameters factoryName=ADF-VE-UAT1
+            az deployment group create --resource-group CICDv1 --template-file ${{ github.workspace }}/ARMTemplateForFactory.json --parameters factoryName=ADF-VE-UAT1
