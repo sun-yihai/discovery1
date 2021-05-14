@@ -61,6 +61,6 @@ jobs:
       - name: Azure CLI script
         uses: azure/CLI@v1
         with:
-          azcliversion: 2.0.72
+          azcliversion: 2.11.0
           inlineScript: |
-            az datafactory factory create --name "ADF-VE-UAT" --resource-group "CICDv1" --properties @${{ github.workspace }}/ARMTemplateForFactory.json
+            az datafactory factory create --name "ADF-VE-UAT" --resource-group "CICDv1" --properties @${{ github.workspace }}/adf-resources
