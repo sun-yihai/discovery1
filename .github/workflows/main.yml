@@ -64,5 +64,5 @@ jobs:
         with:
           subscriptionId: 11f3763d-3f4f-4f17-a8ec-6110d27fab88
           resourceGroupName: CICDv1
-          template: ${{ github.workspace }}/ARMTemplateForFactory.json
+          template: ${{ github.workspace }}/ArtifactDownload/ARMTemplateForFactory.json
           parameters: factoryName=ADF-VE-UAT
